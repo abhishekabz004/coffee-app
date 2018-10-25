@@ -21,7 +21,15 @@ class CartPage extends Component {
         <h2>Your Order</h2>
         {this.props.items.length !== 0 ? (
             <div>
-        <table>
+        <table style={{ marginTop: "60px" }}
+            className="table">
+            <thead>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col"></th>
+                <th scope="col">Cost</th>
+              </tr>
+            </thead>
             <tbody>
               {this.props.items.map(item => (
                 <tr key={"key"+item.id}>
@@ -32,7 +40,7 @@ class CartPage extends Component {
                       x{item.quantity}
                   </td>
                   <td>
-                      {item.quantity}*{item.rate}
+                      {item.quantity*item.rate}
                   </td>
                 </tr>
               ))}
@@ -52,10 +60,11 @@ class CartPage extends Component {
               You haven't ordered anything yet.! 
             </div>
             <div>
-                Kindly go back to the 
+                Kindly go back to the Menu by clicking 
                 <span style = {{width: "50px", height: "25px" , border: "1px", color: "#3c1414", boxSizing: "border-box"}}
                  onClick ={() => this.goToHomePage()}>
-                Menu
+                 <strong>
+                &nbsp; HERE &nbsp;</strong>
                 </span>
                 and add something to the cart.
             </div>
@@ -73,7 +82,7 @@ const getVisibleCart = (items, filter) => {
     case SHOW_CART:
       return items.filter(t => t.quantity >0);
     default:
-      throw new Error("Unknown filter: " + filter);
+      return items.filter(t => t.quantity >0);
   }
 };
 

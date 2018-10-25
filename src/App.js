@@ -27,17 +27,6 @@ class App extends Component {
                 color: "#3d1219"
               }}
             />
-            <Header
-              as="h2"
-              content="Drinks Menu"
-              inverted
-              style={{
-                fontSize: "1.7em",
-                fontWeight: "normal",
-                marginTop: "0.5em",
-                color: "#887a5d"
-              }}
-            />
         <div className="container" style={{ marginTop: "80px" }}>
           <div>
             <Router>

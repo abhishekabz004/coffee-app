@@ -9,6 +9,7 @@ import { SHOW_ALL } from "../actions/actionsTypes";
 import { bindActionCreators } from "redux";
 import {
   Button,
+  Header
 } from "semantic-ui-react";
 
 class HomePage extends Component {
@@ -19,6 +20,18 @@ class HomePage extends Component {
 
   render() {
     return (
+      <div>
+      <Header
+      as="h2"
+      content="Drinks Menu"
+      inverted
+      style={{
+        fontSize: "1.7em",
+        fontWeight: "normal",
+        marginTop: "0.5em",
+        color: "#887a5d"
+      }}
+      />
       <div className="col-lg-10 offset-lg-1 col-md-10 col-sm-12 col-xs-12" onLoadStart ={() => this.props.setVisibilityFilter(SHOW_ALL)} >
         <table
             style={{ marginTop: "60px" }}
@@ -49,7 +62,7 @@ class HomePage extends Component {
                         fontSize: "20pt",
                         marginRight: "20px"
                       }}
-                    /> {item.quantity}
+                    /> {item.quantity}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span
                       className="fas fa-plus-circle"
                       onClick={() => this.props.addToCart(item.id)}
@@ -64,6 +77,7 @@ class HomePage extends Component {
                       Move to Cart
 
         </Button>
+      </div>
       </div>
     );
   }

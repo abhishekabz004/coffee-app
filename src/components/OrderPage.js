@@ -1,9 +1,12 @@
 import React from "react";
 
 export const OrderPage = () => (
-  <div>
+  
+    <div className="alert " role="alert">
+              Your Order is successful! Thank you and Please visit us again. 
+            </div>
       
-  </div>
+  
 );
 
 export default OrderPage;
